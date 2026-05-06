@@ -8,8 +8,15 @@ from models import InMemoryDatabase, TestRunner
 
 def main():
     db = InMemoryDatabase()
-    db.execute_query("SET user1 name Alice")
+    # db.execute_query("SET user1 name Alice")
     db.execute_query("SET user1 profile.age 25")
+    print(db.data_structure)
+    db.execute_query("SET user1 contact_info.phone_numbers.home x")
+    print(db.data_structure)
+
+
+
+
 
 def run_all_tests():
     runner = TestRunner()
@@ -22,3 +29,4 @@ def run_all_tests():
     runner.assert_equal(db.execute_query("GET user1 name"), "Alice", "GET retrieves value")
 
 main()
+
