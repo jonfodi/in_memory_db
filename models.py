@@ -72,11 +72,14 @@ class InMemoryDatabase:
             self.data_structure[key] = {}
         
         user_data = self.data_structure[key]
+        # what are we trying to do here 
+        # we have the dictionary for the user the set query is for 
+        # now we need to put the data coming from the request into the dictionary
+        # the data coming in may require nesting 
+        # path = name, value = Jon -> { user_1: {name: Jon} }
+        # path = profile.age, value = 25 -> { user_1: { profile: age: 25 } }
 
-        path_traversal = path.split('.')
-        print(path_traversal)
-        for path in range(path_traversal):
-            print(path)
+
 
     def get_query():
         pass
