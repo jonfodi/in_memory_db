@@ -71,10 +71,19 @@ class InMemoryDatabase:
         if key not in self.data_structure:
             self.data_structure[key] = {}
 
+        input_data = {}
         path_data = path.split('.')
-        print(path_data)
-        for p in path_data:
-            print(p)
+
+        if len(path_data) == 1:
+            input_data[path] = value
+            self.data_structure[key] = input_data
+            return 
+        if len(path_data) == 2:
+            nested_dict = {}
+            nested_dict[path_data[1]] = value
+            input_data[path_data[0]] = nested_dict
+            self.data_structure[key] = input_data
+            return
     
     def get_query():
         pass
