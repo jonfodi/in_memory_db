@@ -65,6 +65,8 @@ class InMemoryDatabase:
         value = split_query[3]
         if method == "SET":
             return self.set_query(key, path, value)
+        if method == "GET":
+            return self.get_query(key, path)
 
     # { user_1: {}, user_2: {}, user_3: {} }
 
@@ -92,7 +94,7 @@ class InMemoryDatabase:
                 user_data[path_value] = {}
             user_data = user_data[path_value]
             
-    def get_query():
+    def get_query(self, key, path) -> str:
         pass
 
 
