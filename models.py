@@ -72,6 +72,9 @@ class InMemoryDatabase:
             self.data_structure[key] = {}
         
         user_data = self.data_structure[key]
+
+        path_traversal = path.split('.')
+        print(path_traversal)
         user_data[path] = value
         print(self.data_structure)
 
