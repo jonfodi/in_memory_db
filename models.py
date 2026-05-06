@@ -79,7 +79,7 @@ class InMemoryDatabase:
             self.data_structure[key] = {}
 
         user_data = self.data_structure[key]
-        print(user_data)
+        
 
         # if len(path_data) == 1:
         #     input_data[path] = value
