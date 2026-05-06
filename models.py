@@ -72,6 +72,8 @@ class InMemoryDatabase:
             self.data_structure[key] = {}
         
         user_data = self.data_structure[key]
+        
+        
         # what are we trying to do here 
         # we have the dictionary for the user the set query is for 
         # now we need to put the data coming from the request into the dictionary
@@ -79,15 +81,8 @@ class InMemoryDatabase:
         # path = name, value = Jon -> { user_1: {name: Jon} }
         # path = profile.age, value = 25 -> { user_1: { profile: age: 25 } }
 
-        input_dict = {}
-        nested_data = path.split('.')
-        if len(nested_data) == 1:
-            input_dict[path] = value
-        user_data[]
+
     
-
-
-
     def get_query():
         pass
 
