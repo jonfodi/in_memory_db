@@ -13,6 +13,7 @@ def main():
     print(db.data_structure)
     db.execute_query("SET user1 profile.age 0")
     print(db.data_structure)
+    db.execute_query("GET user1 profile.age")
 
 
 
