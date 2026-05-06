@@ -96,9 +96,14 @@ class InMemoryDatabase:
             
     def get_query(self, key, path) -> str:
         user_data = self.data_structure[key]
-        if path not in user_data:
-            return None
-        print(user_data)
+        nested_path = path.split('.')
+        for index, path_value in enumerate(nested_path):
+            if index == len(nested_path) - 1:
+                return user_data[path_value]
+            user_data = user_data[path_value]
+
+            
+
 
 
 class TestRunner:
