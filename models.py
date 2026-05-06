@@ -62,8 +62,8 @@ class InMemoryDatabase:
         method = split_query[0]
         key = split_query[1]
         path = split_query[2]
-        value = split_query[3]
         if method == "SET":
+            value = split_query[3]
             return self.set_query(key, path, value)
         if method == "GET":
             return self.get_query(key, path)
@@ -95,7 +95,10 @@ class InMemoryDatabase:
             user_data = user_data[path_value]
             
     def get_query(self, key, path) -> str:
-        pass
+        user_data = self.data_structure[key]
+        if path not in user_data:
+            return None
+        print(user_data)
 
 
 class TestRunner:
