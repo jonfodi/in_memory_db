@@ -68,10 +68,14 @@ class InMemoryDatabase:
 
     # { user_1: {}, user_2: {}, user_3: {} }
 
+    # path = Name, value = Alice
     # { user_1: { name: Alice } }
-    # { user_1: { name: Alice, profile: { age: 25 } } }
 
+    # path = profile.age, value = 25
     # { user_1: { profile: { age: 25 } } }
+
+    # path = contact_info.phone_numbers.home, value = x 
+    # { user_1: { contact_info: { phone_numbers: { home: x } } } }
 
     def set_query(self, key, path, value) -> str:
 
@@ -79,7 +83,12 @@ class InMemoryDatabase:
             self.data_structure[key] = {}
 
         user_data = self.data_structure[key]
+        nested_path = path.split('.')
+        for path_value in nested_path:
+            
+   
         
+        print(self.data_structure)
 
         # if len(path_data) == 1:
         #     input_data[path] = value
