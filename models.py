@@ -84,28 +84,14 @@ class InMemoryDatabase:
 
         user_data = self.data_structure[key]
         nested_path = path.split('.')
-        for path_value in nested_path:
-            print(user_data)
-            if path_value == nested_path[-1]:
+        for index, path_value in enumerate(nested_path):
+            if index == len(nested_path) - 1:
                 user_data[path_value] = value
                 return
             if path_value not in user_data:
                 user_data[path_value] = {}
             user_data = user_data[path_value]
             
-   
-
-        # if len(path_data) == 1:
-        #     input_data[path] = value
-        #     self.data_structure[key] = input_data
-        #     return 
-        # if len(path_data) == 2:
-        #     nested_dict = {}
-        #     nested_dict[path_data[1]] = value
-        #     input_data[path_data[0]] = nested_dict
-        #     self.data_structure[key] = input_data
-        #     return
-    
     def get_query():
         pass
 
