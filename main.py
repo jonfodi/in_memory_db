@@ -9,11 +9,8 @@ from models import InMemoryDatabase, TestRunner
 def main():
     db = InMemoryDatabase()
     # db.execute_query("SET user1 name Alice")
-    db.execute_query("SET user1 profile.age 25")
-    print(db.data_structure)
-    db.execute_query("SET user1 profile.age 0")
-    print(db.data_structure)
-    db.execute_query("GET user1 profile.age")
+    db.execute_query("SET user1 data.name.first jon")
+    print(db.execute_query("GET user1 data.name.first"))
 
 
 
