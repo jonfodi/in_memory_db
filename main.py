@@ -11,7 +11,7 @@ def main():
     # db.execute_query("SET user1 name Alice")
     db.execute_query("SET user1 profile.age 25")
     print(db.data_structure)
-    db.execute_query("SET user1 contact_info.phone_numbers.home x")
+    db.execute_query("SET user1 profile.age 0")
     print(db.data_structure)
 
 
