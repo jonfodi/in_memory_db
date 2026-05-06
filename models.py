@@ -66,6 +66,13 @@ class InMemoryDatabase:
         if method == "SET":
             return self.set_query(key, path, value)
 
+    # { user_1: {}, user_2: {}, user_3: {} }
+
+    # { user_1: { name: Alice } }
+    # { user_1: { name: Alice, profile: { age: 25 } } }
+
+    # { user_1: { profile: { age: 25 } } }
+
     def set_query(self, key, path, value) -> str:
 
         if key not in self.data_structure:
