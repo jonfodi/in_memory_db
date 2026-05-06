@@ -79,6 +79,13 @@ class InMemoryDatabase:
         # path = name, value = Jon -> { user_1: {name: Jon} }
         # path = profile.age, value = 25 -> { user_1: { profile: age: 25 } }
 
+        input_dict = {}
+        nested_data = path.split('.')
+        if len(nested_data) == 1:
+            input_dict[path] = value
+        user_data[]
+    
+
 
 
     def get_query():
